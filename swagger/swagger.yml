@@ -1,0 +1,415 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /actividad/:
+    get:
+      tags:
+      - actividad
+      description: get Actividad
+      operationId: ActividadController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Actividad'
+        "403":
+          description: ""
+    post:
+      tags:
+      - actividad
+      description: create Actividad
+      operationId: ActividadController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Actividad content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Actividad'
+      responses:
+        "201":
+          description: '{int} models.Actividad'
+        "403":
+          description: body is empty
+  /actividad/{id}:
+    get:
+      tags:
+      - actividad
+      description: get Actividad by id
+      operationId: ActividadController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Actividad'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - actividad
+      description: update the Actividad
+      operationId: ActividadController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Actividad content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Actividad'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Actividad'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - actividad
+      description: delete the Actividad
+      operationId: ActividadController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /estado/:
+    get:
+      tags:
+      - estado
+      description: get Estado
+      operationId: EstadoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Estado'
+        "403":
+          description: ""
+    post:
+      tags:
+      - estado
+      description: create Estado
+      operationId: EstadoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Estado content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Estado'
+      responses:
+        "201":
+          description: '{int} models.Estado'
+        "403":
+          description: body is empty
+  /estado/{id}:
+    get:
+      tags:
+      - estado
+      description: get Estado by id
+      operationId: EstadoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Estado'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - estado
+      description: update the Estado
+      operationId: EstadoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Estado content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Estado'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Estado'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - estado
+      description: delete the Estado
+      operationId: EstadoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /responsable/:
+    get:
+      tags:
+      - responsable
+      description: get Responsable
+      operationId: ResponsableController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Responsable'
+        "403":
+          description: ""
+    post:
+      tags:
+      - responsable
+      description: create Responsable
+      operationId: ResponsableController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Responsable content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Responsable'
+      responses:
+        "201":
+          description: '{int} models.Responsable'
+        "403":
+          description: body is empty
+  /responsable/{id}:
+    get:
+      tags:
+      - responsable
+      description: get Responsable by id
+      operationId: ResponsableController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Responsable'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - responsable
+      description: update the Responsable
+      operationId: ResponsableController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Responsable content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Responsable'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Responsable'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - responsable
+      description: delete the Responsable
+      operationId: ResponsableController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  models.Actividad:
+    title: Actividad
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      Estado:
+        $ref: '#/definitions/models.Estado'
+      FechaLimite:
+        type: string
+        format: datetime
+      FechaRegistro:
+        type: string
+        format: datetime
+      Id:
+        type: integer
+        format: int64
+      Responsable:
+        $ref: '#/definitions/models.Responsable'
+      Soporte:
+        type: string
+  models.Estado:
+    title: Estado
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Tipo:
+        type: string
+  models.Responsable:
+    title: Responsable
+    type: object
+    properties:
+      Correo:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+      Telefono:
+        type: integer
+        format: int64
+tags:
+- name: responsable
+  description: |
+    ResponsableController operations for Responsable
+- name: estado
+  description: |
+    EstadoController operations for Estado
+- name: actividad
+  description: |
+    ActividadController operations for Actividad
